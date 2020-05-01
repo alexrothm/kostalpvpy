@@ -10,7 +10,7 @@ def start_job():
     command = os.path.join(PROJECT_ROOT, "venv/bin/python " + os.path.join(PROJECT_ROOT, "kostal_db_fill.py"))
     job1 = cron.new(command=command, comment="THISISPV")
 
-    job1.minute.every(1)
+    job1.minute.every(15)
     cron.write()
     return None
 
