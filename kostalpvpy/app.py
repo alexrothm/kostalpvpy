@@ -24,7 +24,7 @@ def register_extensions(app):
 
 
 def register_blueprints(app):
-    app.register_blueprint(home.views.bp_home)
+    app.register_blueprint(home.controller.bp_home)
 
     return None
 

@@ -12,4 +12,4 @@ def home():
 
 @bp_home.route("/test2")
 def test():
-    return render_template("home/index.html")
+    return render_template("home/sample_solar.html")
