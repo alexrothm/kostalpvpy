@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template
 
-from kostalpvpy.pvdata.helper import (get_current_values, get_last_year_energy, get_max_energy_last_seven_days)
+from kostalpvpy.pvdata.helper import (get_current_values, get_last_year_energy, get_max_energy_last_seven_days, get_table_data)
 
 bp_home = Blueprint("home", __name__)
 
@@ -20,8 +20,10 @@ def home():
     if hasattr(last_year_energy, "total_energy"):
         current_year_energy = total_energy - last_year_energy.total_energy
 
+    data = get_table_data()
+
     return render_template("home/home.html",
                            daily_energy=daily_energy,
                            max_daily_energy_last_seven_days=max_daily_energy_last_seven_days,
                            current_year_energy=current_year_energy,
-                           total_energy=total_energy)
+                           total_energy=total_energy, data=data)

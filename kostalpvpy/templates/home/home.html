@@ -61,6 +61,35 @@
                     </div>
                 </div>
                 <!-- /.row -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header bg-primary">Letzten 30 Tage</div>
+                            <div class="card-body table-responsive p-0">
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th class="text-right">Datum</th>
+                                        <th class="text-right">Tägliche kWh</th>
+                                        <th class="text-right">Insgesamt kWh</th>
+                                        <th class="text-right">Max Output kWh</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for d in data %}
+                                        <tr>
+                                            <td class="text-right">{{ d.created_at }}</td>
+                                            <td class="text-right">{{ '%0.2f' | format(d.daily_energy|float) }}</td>
+                                            <td class="text-right">{{ '%d'| format(d.total_energy) }}</td>
+                                            <td class="text-right">{{ '%d'| format(d.max_output) }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content -->
