@@ -9,15 +9,9 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">Starter Page</h1>
+                        <h1 class="m-0 text-dark">Dashboard</h1>
                     </div><!-- /.col -->
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Starter Page</li>
-                        </ol>
-                    </div><!-- /.col -->
-                </div><!-- /.row -->S
+                </div><!-- /.row -->
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
@@ -26,61 +20,45 @@
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-3 col-md-6">
                         <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make up the bulk of the card's
-                                    content.
-                                </p>
-
-                                <a href="#" class="card-link">Card link</a>
-                                <a href="#" class="card-link">Another link</a>
+                            <div class="card-header bg-primary">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <i class="fas fa-bolt fa-5x" style="color: white"></i>
+                                    </div>
+                                    <div class="col-9 text-right">
+                                        <h1>{{ daily_energy }} kWh</h1>
+                                        <div>Tägliche Leistung</div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="card card-primary card-outline">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make up the bulk of the card's
-                                    content.
-                                </p>
-                                <a href="#" class="card-link">Card link</a>
-                                <a href="#" class="card-link">Another link</a>
-                            </div>
-                        </div><!-- /.card -->
-                    </div>
-                    <!-- /.col-md-6 -->
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5 class="m-0">Featured</h5>
-                            </div>
-                            <div class="card-body">
-                                <h6 class="card-title">Special title treatment</h6>
-
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-
-                        <div class="card card-primary card-outline">
-                            <div class="card-header">
-                                <h5 class="m-0">Featured</h5>
-                            </div>
-                            <div class="card-body">
-                                <h6 class="card-title">Special title treatment</h6>
-
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                <a href="{{ url_for('home.test') }}" class="btn btn-primary">Go somewhere</a>
+                            <div class="card-footer">
+                                <span class="fa-pull-left">Max letzten 7 Tage</span>
+                                <span class="fa-pull-right">{{ max_daily_energy_last_seven_days }} kWh</span>
                             </div>
                         </div>
                     </div>
-                    <!-- /.col-md-6 -->
+                    <!-- /.col-lg-3 col-md-6 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-header bg-primary">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <i class="fas fa-lightbulb fa-5x" style="color: white"></i>
+                                    </div>
+                                    <div class="col-9 text-right">
+                                        <h1>{{ current_year_energy }} kWh</h1>
+                                        <div>Aktuelles Jahr</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <span class="fa-pull-left">Insgesamte Leistung</span>
+                                <span class="fa-pull-right">{{ total_energy }} kWh</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.row -->
             </div><!-- /.container-fluid -->
