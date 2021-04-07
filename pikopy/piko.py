@@ -39,62 +39,107 @@ class Piko():
 
     def get_current_power(self):
         """returns the current power in W"""
-        return int(self._get_raw_content()[0])
+        tmp = self._get_raw_content()[0]
+        if not tmp.isnumeric():
+            return 0
+        return int(tmp)
 
     def get_total_energy(self):
         """returns the total energy in kWh"""
+        tmp = self._get_raw_content()[1]
+        if not tmp.isnumeric():
+            return 0
         return int(self._get_raw_content()[1])
 
     def get_daily_energy(self):
         """returns the daily energy in kWh"""
+        tmp = self._get_raw_content()[2]
+        if not tmp.isnumeric():
+            return 0
         return float(self._get_raw_content()[2])
 
     def get_string1_voltage(self):
+        tmp = self._get_raw_content()[3]
+        if not tmp.isnumeric():
+            return 0
         """returns the voltage from string 1 in V"""
         return int(self._get_raw_content()[3])
 
     def get_string1_current(self):
         """returns the current from string 1 in A"""
+        tmp = self._get_raw_content()[5]
+        if not tmp.isnumeric():
+            return 0
         return float(self._get_raw_content()[5])
 
     def get_string2_voltage(self):
         """returns the voltage from string 2 in V"""
+        tmp = self._get_raw_content()[7]
+        if not tmp.isnumeric():
+            return 0
         return int(self._get_raw_content()[7])
 
     def get_string2_current(self):
         """returns the current from string 2 in A"""
+        tmp = self._get_raw_content()[9]
+        if not tmp.isnumeric():
+            return 0
         return float(self._get_raw_content()[9])
 
     def get_string3_voltage(self):
         """returns the voltage from string 3 in V"""
+        tmp = self._get_raw_content()[11]
+        if not tmp.isnumeric():
+            return 0
         return int(self._get_raw_content()[11])
 
     def get_string3_current(self):
         """returns the current from string 3 in A"""
+        tmp = self._get_raw_content()[13]
+        if not tmp.isnumeric():
+            return 0
         return float(self._get_raw_content()[13])
 
     def get_l1_voltage(self):
         """returns the voltage from line 1 in V"""
+        tmp = self._get_raw_content()[4]
+        if not tmp.isnumeric():
+            return 0
         return int(self._get_raw_content()[4])
 
     def get_l1_power(self):
         """returns the power from line 1 in W"""
+        tmp = self._get_raw_content()[6]
+        if not tmp.isnumeric():
+            return 0
         return int(self._get_raw_content()[6])
 
     def get_l2_voltage(self):
         """returns the voltage from line 2 in V"""
+        tmp = self._get_raw_content()[8]
+        if not tmp.isnumeric():
+            return 0
         return int(self._get_raw_content()[8])
 
     def get_l2_power(self):
         """returns the power from line 1 in W"""
+        tmp = self._get_raw_content()[10]
+        if not tmp.isnumeric():
+            return 0
         return int(self._get_raw_content()[10])
 
     def get_l3_voltage(self):
         """returns the voltage from line 3 in V"""
+        tmp = self._get_raw_content()[12]
+        if not tmp.isnumeric():
+            return 0
         return int(self._get_raw_content()[12])
 
     def get_l3_power(self):
         """returns the power from line 3 in W"""
+        tmp = self._get_raw_content()[14]
+        if not tmp.isnumeric():
+            return 0
         return int(self._get_raw_content()[14])
 
     def get_status(self):
