@@ -28,6 +28,7 @@ class PVData(SurrogatePK, Model):
     current_power = Column(db.Integer(), nullable=True)
     daily_energy = Column(db.Float(), nullable=True)
     total_energy = Column(db.Integer(), nullable=True)
+    status = Column(db.String(64), nullable=True)
 
 
 def __init__(self):

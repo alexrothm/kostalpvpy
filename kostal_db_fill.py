@@ -13,8 +13,8 @@ def fill_with_sun(lat, lon, inverter):
     city = LocationInfo("St", "GER", timezone_local, lat, lon)
     s = sun(city.observer, date=now, tzinfo=timezone_local)
 
-    sunrise = s["sunrise"]
-    sunset = s["sunset"]
+    sunrise = s["dawn"]
+    sunset = s["dusk"]
 
     if not sunrise <= now <= sunset:
         return city

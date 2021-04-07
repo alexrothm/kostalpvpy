@@ -15,5 +15,6 @@ CREATE TABLE IF NOT EXISTS "pvdata" (
   ac_3_p        INTEGER,
   current_power INTEGER,
   daily_energy  REAL,
-  total_energy  INTEGER
+  total_energy  INTEGER,
+  status        TEXT
 );
