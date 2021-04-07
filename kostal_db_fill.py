@@ -24,8 +24,8 @@ def fill_with_sun(lat, lon, inverter):
 
 
 def fill_db_with_piko(i: Piko):
-    if i.get_status() == "Aus":
-        return None
+    # if i.get_status() == "Aus":
+    #     return None
 
     dc_1_u = i.get_string1_voltage()
     dc_1_i = i.get_string1_current()
@@ -75,3 +75,4 @@ def fill_db_with_piko(i: Piko):
 if __name__ == "__main__":
     inverter = Piko(host="http://192.168.178.78")
     fill_with_sun(52.005552, 6.919066, inverter)
+
