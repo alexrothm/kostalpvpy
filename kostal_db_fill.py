@@ -45,6 +45,7 @@ def fill_db_with_piko(i: Piko):
     current_power = i.get_current_power()
     daily_energy = i.get_daily_energy()
     total_energy = i.get_total_energy()
+    status = i.get_status()
 
     PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
     database = os.path.join(PROJECT_ROOT, "app.db")
@@ -60,10 +61,11 @@ def fill_db_with_piko(i: Piko):
                       ac_3_u, ac_3_p,
                       current_power,
                       daily_energy,
-                      total_energy
+                      total_energy,
+                      status
                       )]
 
-    c.executemany('INSERT INTO pvdata VALUES (null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', sql_statement)
+    c.executemany('INSERT INTO pvdata VALUES (null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', sql_statement)
     conn.commit()
     c.close()
 
