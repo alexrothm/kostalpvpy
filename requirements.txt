@@ -4,7 +4,7 @@ lxml
 # Flask
 Flask==2.3.2
 Werkzeug==0.16.0
-Jinja2==2.11.3
+Jinja2==3.1.3
 MarkupSafe==1.1.1
 Flask-Caching>=1.0.0
 
